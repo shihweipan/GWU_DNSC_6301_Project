@@ -173,3 +173,13 @@ Accuracy at cutoff 0.30 is: 0.7948, difference : -0.0003
 |20|0.970715| 	0.609386| 	0.010017| 	0.905950|
 
 ## Ethical considerations
+
+### Math or software problems
+
+* Python is a open source. If the packages contain the Trojan horse, we may be attacked when we use it.
+* The Algorithm was designed without humanity, so the prediction result may not be close to reality.
+
+### Real-world risks: who, what, when or how
+
+* When we use Python to load confidential data, there is a potential for a data breach.
+* Inaccurate prediction results can lead to a decrease in customer confidence in the company.
