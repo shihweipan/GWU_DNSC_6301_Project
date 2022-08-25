@@ -64,17 +64,17 @@ DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
 ## Quantitative Analysis
 
 ### Correlation Heatmap
-![Correlation Heatmap](download.png)
+![Correlation Heatmap](Heatmap.png)
 
 ### Variable Histograms
-![Variable Histograms](download.png)
+![Variable Histograms](Histograms.png)
 
 ### Model Experiment
 
 #### Post-Pruning : ALPHA
-![Variable Histograms](download.png)
+![alpha](alpha.png)
 
 #### Cross Validation : DEPTH
-
+![depth](depth.png)
 
 ## Ethical considerations
