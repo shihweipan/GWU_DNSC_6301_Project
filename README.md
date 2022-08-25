@@ -69,12 +69,107 @@ DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
 ### Variable Histograms
 ![Variable Histograms](Histograms.png)
 
-### Model Experiment
+## Model Experiment
 
-#### Post-Pruning : ALPHA
+### Post-Pruning : ALPHA
 ![alpha](alpha.png)
 
-#### Cross Validation : DEPTH
+### Cross Validation : DEPTH
 ![depth](depth.png)
+
+#### Test Detail
+| Depth | Training AUC | Validation AUC | 5-Fold SD |
+|------:|-------------:|---------------:|----------:|
+|     1 |     0.641367 |       0.652452 |  0.007965 |
+|     2 |     0.692113 |       0.703766 |  0.014767 |
+|     3 |     0.733044 |       0.740628 |  0.009125 |
+|     4 |    	0.748443 |      	0.751006 | 	0.008237 |
+|     5 |    	0.765782 |      	0.760682 | 	0.013529 |
+|     6 |    	0.776733 |      	0.763840 | 	0.019140 |
+|     7 |    	0.788668 |      	0.748281 | 	0.014854 |
+|     8 |    	0.802992 |      	0.745292 | 	0.017962 |
+|     9 |    	0.816080 |      	0.733223 | 	0.019062 |
+|    10 |    	0.832419 |      	0.719415 | 	0.009521 |
+|    11 |    	0.848311 |      	0.699499 | 	0.014901 |
+|    12 |    	0.863631 |      	0.684096 | 	0.009305 |
+|    13 |    	0.879547 |      	0.666395 | 	0.013229 |
+|    14 |    	0.896630 |      	0.643944 | 	0.018922 |
+|    15 |    	0.913592 |      	0.634721 | 	0.015617 |
+|    16 |    	0.929671 |      	0.629846 | 	0.018662 |
+|    17 |    	0.943429 |      	0.613150 | 	0.023878 |
+|    18 |    	0.954195 |      	0.606919 | 	0.017963 |
+|    19 |    	0.963902 |      	0.599065 | 	0.017561 |
+|    20 |    	0.970715 |      	0.609386 | 	0.010017 |
+
+* **Best Parameters** : **max_depth = 6**
+* **Test Data AUC** :  **0.7476**
+
+### Variable Importance
+![Importances](Importances.png)
+
+### Bias Remediation
+
+* **Suitable cutoff value according to test results** : **0.2**
+#### Test Detail
+```
+Accuracy at cutoff 0.00 is: 0.2315, difference : 0.2315
+Accuracy at cutoff 0.01 is: 0.2315, difference : 0.0000
+Accuracy at cutoff 0.02 is: 0.2315, difference : 0.0000
+Accuracy at cutoff 0.03 is: 0.2315, difference : 0.0000
+Accuracy at cutoff 0.04 is: 0.2315, difference : 0.0000
+Accuracy at cutoff 0.05 is: 0.2315, difference : 0.0000
+Accuracy at cutoff 0.06 is: 0.2322, difference : 0.0007
+Accuracy at cutoff 0.07 is: 0.2322, difference : 0.0000
+Accuracy at cutoff 0.08 is: 0.5347, difference : 0.3025
+Accuracy at cutoff 0.09 is: 0.5347, difference : 0.0000
+Accuracy at cutoff 0.10 is: 0.5347, difference : 0.0000
+Accuracy at cutoff 0.11 is: 0.5562, difference : 0.0215
+Accuracy at cutoff 0.12 is: 0.5562, difference : 0.0000
+Accuracy at cutoff 0.13 is: 0.5562, difference : 0.0000
+Accuracy at cutoff 0.14 is: 0.5562, difference : 0.0000
+Accuracy at cutoff 0.15 is: 0.6883, difference : 0.1322
+Accuracy at cutoff 0.16 is: 0.6883, difference : 0.0000
+Accuracy at cutoff 0.17 is: 0.6935, difference : 0.0052
+Accuracy at cutoff 0.18 is: 0.6935, difference : 0.0000
+Accuracy at cutoff 0.19 is: 0.6935, difference : 0.0000
+Accuracy at cutoff 0.20 is: 0.7630, difference : 0.0695
+Accuracy at cutoff 0.21 is: 0.7772, difference : 0.0142
+Accuracy at cutoff 0.22 is: 0.7813, difference : 0.0042
+Accuracy at cutoff 0.23 is: 0.7813, difference : 0.0000
+Accuracy at cutoff 0.24 is: 0.7900, difference : 0.0087
+Accuracy at cutoff 0.25 is: 0.7908, difference : 0.0008
+Accuracy at cutoff 0.26 is: 0.7908, difference : 0.0000
+Accuracy at cutoff 0.27 is: 0.7908, difference : 0.0000
+Accuracy at cutoff 0.28 is: 0.7952, difference : 0.0043
+Accuracy at cutoff 0.29 is: 0.7952, difference : 0.0000
+Accuracy at cutoff 0.30 is: 0.7948, difference : -0.0003
+```
+
+#### Plot with tree depth, training and validation AUC, AIR
+![final](AIR.png)
+
+#### Test Detail
+| Depth | Training AUC | Validation AUC | 5-Fold SD | Hispanic-to-White AIR |
+|---:|-------------:|---------------:|----------:| --------------------: |
+|1|0.641367| 	0.652452| 	0.007965| 	0.903757|
+|2|0.692113| 	0.703766| 	0.014767| 	0.859659|
+|3|0.733044| 	0.740628| 	0.009125| 	0.790934|
+|4|0.748443| 	0.751006| 	0.008237| 	0.842215|
+|5|0.765782| 	0.760682| 	0.013529| 	0.816429|
+|6|0.776733| 	0.763840| 	0.019140| 	0.831999|
+|7|0.788668| 	0.748281| 	0.014854| 	0.812137|
+|8|0.802992| 	0.745292| 	0.017962| 	0.811290|
+|9|0.816080| 	0.733223| 	0.019062| 	0.825349|
+|10|0.832419| 	0.719415| 	0.009521| 	0.824719|
+|11|0.848311| 	0.699499| 	0.014901| 	0.862977|
+|12|0.863631| 	0.684096| 	0.009305| 	0.840306|
+|13|0.879547| 	0.666395| 	0.013229| 	0.839040|
+|14|0.896630| 	0.643944| 	0.018922| 	0.843479|
+|15|0.913592| 	0.634721| 	0.015617| 	0.859287|
+|16|0.929671| 	0.629846| 	0.018662| 	0.880159|
+|17|0.943429| 	0.613150| 	0.023878| 	0.887453|
+|18|0.954195| 	0.606919| 	0.017963| 	0.907257|
+|19|0.963902| 	0.599065| 	0.017561| 	0.908921|
+|20|0.970715| 	0.609386| 	0.010017| 	0.905950|
 
 ## Ethical considerations
