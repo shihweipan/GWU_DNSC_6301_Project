@@ -176,8 +176,8 @@ Accuracy at cutoff 0.30 is: 0.7948, difference : -0.0003
 
 ### Describe potential negative impacts of using your model:
 
-＊ Python is a open source. If the packages contain the Trojan horse, we may be attacked when we use it. 
-＊ When we use Python to load confidential data, there is a potential for a data breach.
+* Python is a open source. If the packages contain the Trojan horse, we may be attacked when we use it. 
+* When we use Python to load confidential data, there is a potential for a data breach.
 
 ### Describe potential uncertainties relating to the impacts of using your model:
 
