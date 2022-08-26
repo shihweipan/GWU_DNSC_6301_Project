@@ -174,12 +174,18 @@ Accuracy at cutoff 0.30 is: 0.7948, difference : -0.0003
 
 ## Ethical considerations
 
-### Math or software problems
+### Describe potential negative impacts of using your model:
 
-* Python is a open source. If the packages contain the Trojan horse, we may be attacked when we use it.
+＊Python is a open source. If the packages contain the Trojan horse, we may be attacked when we use it. 
+＊When we use Python to load confidential data, there is a potential for a data breach.
+
+### Describe potential uncertainties relating to the impacts of using your model:
+
 * The Algorithm was designed without humanity, so the prediction result may not be close to reality.
-
-### Real-world risks: who, what, when or how
-
-* When we use Python to load confidential data, there is a potential for a data breach.
 * Inaccurate prediction results can lead to a decrease in customer confidence in the company.
+
+### Describe any unexpected or results:
+* Since the data set used this time does not have null values, the execution will be very smooth, but the real data set in the industry must be full of missing values. In the process of dealing with missing values, the variables of subsequent modeling will be continuously adjusted, whether it is model selection or parameter adjustment. Therefore, whether the results of this model are applicable to the industry remains to be determined.
+* From the result of feature importance, the importance of PAY_0 accounts for more than 60%. I personally think that this proportion is a bit abnormal. It is necessary to clarify the relationship between PAY_0 and the target variable (DELINQ_NEXT), and confirm that DELINQ_NEXT and PAY_0 are in the real world. degree of comparability in .
+* In terms of model selection, other tree classifier models can be compared together (pipelines), and it is also possible to obtain different AUC and feature importance results.
+
